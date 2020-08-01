@@ -27,5 +27,5 @@ if (COMPILE_TESTS)
 endif()
 
 if (COMPILE_EXAMPLES)
-    #add_subdirectory(examples)
+    add_subdirectory(examples)
 endif()

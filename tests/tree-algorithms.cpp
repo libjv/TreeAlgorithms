@@ -35,10 +35,10 @@ Entries entries {
 };
 // clang-format on
 
-struct EntryTraits : jv::NodeTraits<Entries::iterator, EntryTraits> {
+struct EntryTraits : jv::NodeTraits<Entries::const_iterator, EntryTraits> {
     static auto getChildrenCount(iterator it) noexcept -> std::size_t
     {
-        if (Directory* dir = std::get_if<Directory>(&*it))
+        if (auto dir = std::get_if<Directory>(&*it))
             return dir->nb_children;
         else
             return 0;
@@ -49,8 +49,8 @@ TEST_CASE("getNextSibling")
 {
     std::vector<string_view> result;
 
-    auto it = entries.begin() + 1, // pointing to README.md
-        end = entries.end();
+    EntryTraits::iterator it = entries.begin() + 1; // pointing to README.md
+    EntryTraits::iterator end = entries.end();
     for (; it != end; it = EntryTraits::getNextSibling(it))
         std::visit([&](auto& value) { result.push_back(value.name); }, *it);
 
