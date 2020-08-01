@@ -1,5 +1,6 @@
 build/
 .clangd/
+site/
 
 # Created by https://www.toptal.com/developers/gitignore/api/c++,cmake
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++,cmake
