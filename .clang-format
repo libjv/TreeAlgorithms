@@ -1,0 +1,12 @@
+---
+BasedOnStyle: LLVM
+PointerAlignment: Left
+IndentWidth: 4
+ColumnLimit: 100
+CommentPragmas: '^/' # Doxygen/Doxypress comments are not formatted
+AlwaysBreakTemplateDeclarations: Yes
+AllowShortCaseLabelsOnASingleLine: true
+BinPackParameters: false
+NamespaceIndentation: Inner
+AlignAfterOpenBracket: Align
+BreakBeforeBraces: Stroustrup
